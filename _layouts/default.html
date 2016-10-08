@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="/css/base.css" type="text/css"/>
+  <link href='https://fonts.googleapis.com/css?family=Lora'
+        rel='stylesheet' type='text/css'/>
+  <link href='https://fonts.googleapis.com/css?family=Playfair+Display'
+        rel='stylesheet' type='text/css'/>
+  <link href='https://fonts.googleapis.com/css?family=Raleway'
+        rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Fira+Mono'
+        rel='stylesheet' type='text/css'>
+  {% feed_meta %}
+</head>
+
+<body>
+
+<div class="post_header">
+  {% if page.title %}
+  <div class="post_title">{{page.title}}</div>
+  {% else %}
+  <div class="post_title">HaLVM.org</div>
+  {% endif %}
+  {% if page.date %}
+  <div class="post_info">posted {{ page.date | date: "%b %d, %Y" }} by
+    {% assign author = site.data.authors[page.author] %}
+    <a href="{{author.web}}">{{author.name}}</a></div>
+  {% endif %}
+</div>
+
+<ul class="menu">
+  <li class="menuitem"><a href="/index.html">Home</a></li>
+  <li class="menuitem"><a href="/about.html">About</a></li>
+  <li class="menuitem"><a href="https://github.com/GaloisInc/HaLVM">GitHub</a></li>
+  <li class="menuitem"><a href="https://github.com/GaloisInc/HaLVM/wiki">Wiki</a></li>
+  <li class="menuitem"><a href="https://github.com/GaloisInc/HaLVM/issues">Issues</a></li>
+  <li class="menuitem"><a href="tutorials.html">Tutorials</a></li>
+  <li class="menuitem"><a href="http://unikernel.org">unikernel.org</a></li>
+  <li class="menuitem" style="float:right"><a href="/article/2016/04/29/halvm3-manifesto.html">v3 Manifesto</a></li>
+</ul>
+
+
+  <div class="content">
+    {{ content }}
+  </div>
+
+  <div class="legal">
+    <div id="copyright">&copy; 2016 Galois, Inc.</div>
+    <div id="update">Generated {{ site.time | date: "%B %-d, %Y" }}</div>
+    <div id="questions"><a href="/feed.xml"><img src="/images/rss.png" alt="rss
+        feed" id="rssicon"/></a></div>
+  </div>
+</body>
+
+</html>

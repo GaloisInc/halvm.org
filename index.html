@@ -1,0 +1,43 @@
+---
+layout: default
+---
+<div class="home">
+
+  <div class="post-set">
+    <div class="set-header">Latest Articles</div>
+    <ul class="post-list">
+      {% for post in site.categories["article"] limit:10 %}
+      <li><span class="post-meta">{{ post.date | date_to_string }}</span> &mdash;
+        <a href="{{ post.url | prepend: site.baseurl }}" class="post-name">{{
+        post.title | escape }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="post-set">
+    <div class="set-header">Latest Lessons</div>
+    <ul class="post-list">
+      {% for post in site.categories["lesson"] limit:10 %}
+      <li><span class="post-meta">{{ post.date | date_to_string }}</span> &mdash;
+        <a href="{{ post.url | prepend: site.baseurl }}" class="post-name">{{
+        post.title | escape }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="post-set">
+    <div class="set-header">Events</div>
+    <ul class="post-list">
+      {% for post in site.categories["event"] limit:10 %}
+      <li><span class="post-meta">{{ post.date | date_to_string }}</span> &mdash;
+      {% if post.link %} 
+      <a href="{{ post.link }}" class="post-name">{{ post.title | escape }}</a>
+      {% else %}
+      {{ post.title | escape }}</a>
+      {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+</div>
