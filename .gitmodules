@@ -1,0 +1,3 @@
+[submodule "halvm-web"]
+	path = halvm-web
+	url = https://github.com/GaloisInc/halvm-web.git
