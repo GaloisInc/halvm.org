@@ -27,3 +27,4 @@ future: true
 # Build settings
 markdown: kramdown
 theme: minima
+exclude: ["halvm-web","Gemfile","Gemfile.lock","README.md"]
