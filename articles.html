@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+<div class="post-set">
+  <div class="set-header">All Articles</div>
+  <ul class="post-list">
+    {% for post in site.categories["article"] %}
+    <li><span class="post-meta">{{ post.date | date_to_string }}</span> &mdash;
+      <a href="{{ post.url | prepend: site.baseurl }}" class="post-name">{{
+      post.title | escape }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
