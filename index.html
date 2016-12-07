@@ -11,82 +11,115 @@ layout: default
       {% if site.subtitle %}<p class="subtitle">{{ site.subtitle }}</p>{% endif %}
            <button type="button">Get started »</button>
     </header>
-	  </div>
+      </div>
   </div>
 </div>
 
 <div class="wrapper">
 <div class="page">
-	
-	<div class="about">
-	<h1>About</h1>
-		<p>Some good stuff here. Nice and short. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo </p>
-		<br>
-		
-			<div class="benefit"> 
-			<!-- Some icon to the left of these, maybe. Need to bring the <p> higher up as well -->
-				<h3>Read manifesto</h3>
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod 1</p>
-			</div>
-			<div class="benefit">
-				<h3>See tutorials</h3>
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod</p>
-			</div>
-			<div class="benefit">
-				<h3>Great point #3</h3>
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod</p>
-			</div>
-	</div>
-	
+  <div class="about">
+  <h1>About</h1>
+  <p>The HaLVM allows Haskell programmers the opportunity to compile their
+  programs directly to virtual "bare metal." This allows them to control their
+  environment completely, down to the level of device drivers, and can provide
+  additional performance, security, and cost benefits. For example, HaLVMs run
+  in vastly reduced memory and disk footprints (saving you money), without any
+  unnecessary code or libraries (shrinking your attack profile), and without
+  needless schedulers or competing projects (improving your performace). Futher,
+  the strong, flexible type system allows you to prove critical properties of
+  your program before it even launches.</p>
+  <br>
+  <div class="benefit"> 
+  <!-- Some icon to the left of these, maybe. Need to bring the <p> higher up as well -->
+      <h3>Read the v3 Manifesto</h3>
+      <p>We've started working out HaLVM v3, the next generation of the HaLVM
+      with additional features, ease-of-use, and target platforms. Read the
+      manifesto, check the status reports, and help out!</p>
+  </div>
+  <div class="benefit">
+      <h3>See the Tutorials</h3>
+      <p>Interested in the HaLVM, but a little intimidated by the thought of
+      writing your own VM from scratch? Never fear: we have some tutorials and
+      skeletons you can use to get your feet wet simply and easily.</p>
+  </div>
+  <div class="benefit">
+      <h3>Find the Developers</h3>
+      <p>Have questions or comments, bugs or feature requests? Contact the
+      developers, or see when they might be giving a talk in a town near you.
+      Want to have one of the developers come by to give a talk or run a HaLVM
+      workshop? Drop us a note.
+  </div>
+  </div>
 <hr>
 
-	
 <div class="posts">
-		<div class="post-set"> <!-- gridified in _layout.scss. -->
-			<h2>Articles and Tutorials</h2>
-			<ul class="posts-list">
-			  {% for post in site.categories["Dummy"] %}
-				<li>
-				  <strong>
-					<a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-				  </strong>
-				  <span class="post-date">- {{ post.date | date_to_long_string }}</span>
-				</li>
-			  {% endfor %}
-			  </ul>
-		</div>
-		
-		<div class="post-set">
-			<h2>Events</h2>
-			<ul class="posts-list">
-			  {% for post in site.categories["Jekyll"] %}
-				<li>
-				  <strong>
-					<a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-				  </strong>
-				  <span class="post-date">- {{ post.date | date_to_long_string }}</span>
-				</li>
-			  {% endfor %}
-			  </ul>
-		</div>
-	</div>
-	 
-	 <hr>
-	 
-	 <div class="about">
-	<h1>About Galois</h1>
-		<p>Some good stuff here. Nice and short. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo </p>
-		
-	
-	</div>
-	<hr>
-	 <div class="about">
-	<h1>Get started with HaLVM</h1>
-		<p>Some good stuff here. Nice and short. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo </p>
-		
-	
-	</div>
-<!--<ul class="post-list">
+        <div class="post-set"> <!-- gridified in _layout.scss. -->
+            <h2>Articles and Tutorials</h2>
+            <ul class="posts-list">
+              {% for post in site.posts %}
+              {%   if post.categories contains "lesson"  or
+                      post.categories contains "article" or
+                      port.categories contains "status"     %}
+                <li>
+                  <strong>
+                    <a href="{{ post.url | prepend: site.baseurl }}">
+                      {% if post.categories contains "lesson" %}
+                        Tutorial:
+                      {% endif %}
+                      {{ post.title }}</a>
+                  </strong>
+                  <span class="post-date">- {{ post.date | date_to_long_string }}</span>
+                </li>
+              {%  endif %}
+              {% endfor %}
+              </ul>
+        </div>
+        <div class="post-set">
+            <h2>Events</h2>
+            <ul class="posts-list">
+              {% for post in site.categories["event"] %}
+                <li>
+                  <strong>
+                    {% if post.link %}
+                    <a href="{{ post.link }}">
+                    {% endif %}
+                    {{ post.title }}
+                    {% if post.link %}
+                    </a>
+                    {% endif %}
+                  </strong>
+                  <span class="post-date">- {{ post.date | date_to_long_string }}</span>
+                </li>
+              {% endfor %}
+              </ul>
+        </div>
+    </div>
+     <hr>
+     <div class="about">
+    <div class="about">
+    <h1>Get started with HaLVM</h1>
+        <p>Writing programs for the HaLVM is just like writing program for a
+        normal system, but with its own special quirks and tweaks. In fact, we
+        strongly encourage users to start their HaLVM project by implementing
+        their target service on Linux, macOS, or Windows, and only worry about
+        the HaLVM afterwards.</p>
+
+        <p>There already? Then peruse our tutorials for tips and tricks. Our "So
+        you want to build a HaLVM" choose-your-own-adventure tutorial is
+        probably the best place to start.</p>
+    </div>
+    <h1>About Galois</h1>
+    <p>The HaLVM is an open-source offering of <a
+         href="http://galois.com">Galois, Inc.</a>, a Research and
+        Development firm specializing in improving the trustworthiness of
+        critical systems. Galois developed the HaLVM as a prototyping tool to
+        help improve the state of modern operating system design, and continues
+        to use the HaLVM in projects that rely on secure components running in
+        virtual environments.
+        </p>
+    </div>
+    <hr>
+ <!--<ul class="post-list">
   {% for post in paginator.posts %}
   <li>
     <h2>
@@ -115,44 +148,44 @@ layout: default
 </ul>
 
 <nav class="pagination" role="navigation">
-	<p>
+    <p>
     {% if paginator.previous_page %}
-			{% if paginator.page == 2 %}
-			<a class="newer-posts" href="{% if site.baseurl %}{{ site.baseurl }}{% endif %}/">
+            {% if paginator.page == 2 %}
+            <a class="newer-posts" href="{% if site.baseurl %}{{ site.baseurl }}{% endif %}/">
         <span class="fa-stack fa-lg">
           <i class="fa fa-square fa-stack-2x"></i>
           <i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
         </span>
       </a>
-			{% else %}
-			<a class="newer-posts" href="{{ site.baseurl }}/page{{paginator.previous_page}}">
-				<span class="fa-stack fa-lg">
-					<i class="fa fa-square fa-stack-2x"></i>
-					<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
-				</span>
-			</a>
-			{% endif %}
-		{% else %}
-		<span class="fa-stack fa-lg">
+            {% else %}
+            <a class="newer-posts" href="{{ site.baseurl }}/page{{paginator.previous_page}}">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-square fa-stack-2x"></i>
+                    <i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+            {% endif %}
+        {% else %}
+        <span class="fa-stack fa-lg">
       <i class="fa fa-square fa-stack-2x"></i>
       <i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
     </span>
-		{% endif %}
-		<span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
-		{% if paginator.next_page %}
-		<a class="newer-posts" href="{{ site.baseurl }}/page{{paginator.next_page}}">
+        {% endif %}
+        <span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+        {% if paginator.next_page %}
+        <a class="newer-posts" href="{{ site.baseurl }}/page{{paginator.next_page}}">
       <span class="fa-stack fa-lg">
         <i class="fa fa-square fa-stack-2x"></i>
         <i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
       </span>
     </a>
-		{% else %}
-		<span class="fa-stack fa-lg">
+        {% else %}
+        <span class="fa-stack fa-lg">
       <i class="fa fa-square fa-stack-2x"></i>
       <i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
     </span>
-		{% endif %}
-	</p>
+        {% endif %}
+    </p>
 </nav> -->
 
 </div>
