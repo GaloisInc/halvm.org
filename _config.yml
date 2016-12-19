@@ -196,3 +196,12 @@ protocols:
     os_repo: "https://github.com/GaloisInc/halvm.org"
     os_rcs_type: "git"
     os_src: "git@github.com:GaloisInc/halvm.org"
+
+authors:
+  awick:
+    display_name: Adam Wick
+    gravatar:
+    email: awick@galois.com
+    web: http://www.uhusre.com
+    twitter: acwpdx
+    github: acw

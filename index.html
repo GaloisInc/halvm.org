@@ -33,28 +33,32 @@ layout: default
   <!-- Some icon to the left of these, maybe. Need to bring the <p> higher up as well -->
       <h3>Read the v3 Manifesto</h3>
       <p>We've started working out HaLVM v3, the next generation of the HaLVM
-      with additional features, ease-of-use, and target platforms. Read the
-      manifesto, check the status reports, and help out!</p>
+      with additional features, ease-of-use, and target platforms. Read <a
+      href="{{site.baseurl}}{%post_url 2016-04-29-halvm3-manifesto%}">the
+      manifesto</a>, check <a href="{{site.baseurl}}/status.html">the status
+      reports</a>, and help out!</p>
   </div>
   <div class="benefit">
       <h3>See the Tutorials</h3>
       <p>Interested in the HaLVM, but a little intimidated by the thought of
-      writing your own VM from scratch? Never fear: we have some tutorials and
-      skeletons you can use to get your feet wet simply and easily.</p>
+      writing your own VM from scratch? Never fear: we have some <a
+      href="{{site.baseurl}}/tutorials.html">tutorials and skeletons</a> you
+      can use to get your feet wet simply and easily.</p>
   </div>
   <div class="benefit">
       <h3>Find the Developers</h3>
-      <p>Have questions or comments, bugs or feature requests? Contact the
-      developers, or see when they might be giving a talk in a town near you.
+      <p>Have questions or comments, bugs or feature requests? <a
+      href="https://github.com/GaloisInc/HaLVM/issues/new">File a request</a>
+      for us on GitHub, or see when we might be giving a talk in a town near you.
       Want to have one of the developers come by to give a talk or run a HaLVM
-      workshop? Drop us a note.
+      workshop? <a href="mailto:halvm@galois.com">Drop us a note</a>.
   </div>
   </div>
 <hr>
 
 <div class="posts">
         <div class="post-set"> <!-- gridified in _layout.scss. -->
-            <h2>Articles and Tutorials</h2>
+            <h2>News, Articles and Tutorials</h2>
             <ul class="posts-list">
               {% for post in site.posts %}
               {%   if post.categories contains "lesson"  or
@@ -103,11 +107,12 @@ layout: default
         strongly encourage users to start their HaLVM project by implementing
         their target service on Linux, macOS, or Windows, and only worry about
         the HaLVM afterwards.</p>
-
+        <br/>
         <p>There already? Then peruse our tutorials for tips and tricks. Our "So
         you want to build a HaLVM" choose-your-own-adventure tutorial is
         probably the best place to start.</p>
     </div>
+    <br/>
     <h1>About Galois</h1>
     <p>The HaLVM is an open-source offering of <a
          href="http://galois.com">Galois, Inc.</a>, a Research and

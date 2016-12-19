@@ -233,7 +233,7 @@ pre code.hljs {
 	.post-meta {
 		@include outer-container;
 		// padding: 1em 0;
-		color: $medium-gray;
+		//color: $medium-gray;
 		.post-date {
 			@include span-columns(6);
 			text-align: left;
