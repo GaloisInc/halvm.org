@@ -194,6 +194,7 @@ pre code.hljs {
 *	Body
 */
 .page-content {
+    text-align: justify;
 	.wrapper {
 		@include outer-container;
 		padding: 1em;
