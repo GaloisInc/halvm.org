@@ -10,7 +10,7 @@ exclude:
 
 # Site settings
 title: HaLVM
-subtitle: "The Haskell Lightweight Virtual Machine (HaLVM) is the premier Haskell runikernel. Run your Haskell code directly on Xen or EC2, naturally and easily, and gain the speed, space, safety, and security benefits of Haskell + unikernels."
+subtitle: "The Haskell Lightweight Virtual Machine (HaLVM) is the premier Haskell unikernel. Run your Haskell code directly on Xen or EC2, naturally and easily, and gain the speed, space, safety, and security benefits of Haskell + unikernels."
 email: awick@galois.com
 name: Adam Wick
 description: >
@@ -202,6 +202,6 @@ authors:
     display_name: Adam Wick
     gravatar:
     email: awick@galois.com
-    web: http://www.uhusre.com
+    web: http://www.uhsure.com
     twitter: acwpdx
     github: acw

@@ -1,17 +1,19 @@
 ---
 layout: page
-title: "Tutorials"
-permalink: /tutorials/
+title: "News & Status Updates"
+permalink: /news/
 ---
 
-<ul class="posts-list">
-{% for post in site.categories["lesson"] %}
+{% for post in site.posts %}
+{%   if post.categories contains "article" or
+        port.categories contains "status"     %}
   <li>
     <strong>
       <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
     </strong>
     <span class="post-date">- {{ post.date | date_to_long_string }}</span>
   </li>
+{%   endif %}
 {% endfor %}
 </ul>
 <br>
